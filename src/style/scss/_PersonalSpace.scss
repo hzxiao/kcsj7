@@ -6,8 +6,12 @@
     background-attachment: scroll;
     background-position: center 31px;
     background-color: #9CAEC1;
-    width: 1170px;
+    width: 100%;
     margin: auto;
+    &>div{
+        width:1280px;
+        margin:auto;
+    }
 }
 
 #headTop {
