@@ -3,7 +3,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import MainPage from '@/components/MainPage'
-import Page2 from '@/components/Page2'
+import ContentList from '@/components/ContentList'
+import RoadNav from '@/components/RoadNav'
+import ColumnList from '@/components/ColumnList'
+import RecommendList from '@/components/RecommendList'
 
 Vue.use(Router)
 
@@ -22,7 +25,12 @@ export default new Router({
         {
           name: 'Page2',
           path: 'Page2',
-          component: Page2
+          components: {
+            road_nav: RoadNav,
+            content_vp: ContentList,
+            column_vp: ColumnList,
+            recommend_vp: RecommendList,
+          }
         }
       ]
     }

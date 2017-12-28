@@ -3,18 +3,28 @@
     width:1170px;
     margin:auto;
 }
+
 .fl{float:left;}
 .fr{float:right;}
 .cf{clear:both; overflow: hidden;}
+
+.MainPage > .box .left{
+    width:810px;
+    height:auto;
+}
+.MainPage > .box .right{
+    width:345px;
+    height: auto
+}
 </style>
 
 <template>
-    <div class="MainPage">
+    <div class="MainPage m_container">
         <div class="page-header">
           <h1>Example page header <small>Subtext for header</small></h1>
         </div>
 
-        <nav class="navbar navbar-default m_container">
+        <nav class="navbar navbar-default">
           <div class="container-fluid">
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,7 +42,17 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        <router-view></router-view>
+        <!-- vp:viewport -->
+        <div class="box cf">
+            <div class="left fl">
+                <router-view class="road-nav" name="road_nav"></router-view>
+                <router-view class="content-vp" name="content_vp"></router-view>
+            </div>
+            <div class="right fr">
+                 <router-view class="column-vp" name="column_vp"></router-view>
+                <router-view class="recommend-vp" name="recommend_vp"></router-view>           
+            </div>
+        </div>
     </div>
 </template>
 

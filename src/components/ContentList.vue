@@ -1,5 +1,5 @@
 <style>
-.m_contain{width:840px; height:90px; padding: 12px 0px;}
+.m_contain{width:100%;}
 .fl{float:left;}
 .fr{float:right;}
 .cf{clear:both; overflow: hidden;}
@@ -16,7 +16,8 @@
 </style>
 
 <template>
-    <div class="ContentListItem m_contain">
+  <div  class="ContentListItem m_contain">
+    <template v-for="i in 6">
       <div class="contentBox cf">
         <div class="left fl">
           <img src="" alt="">
@@ -36,12 +37,21 @@
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ContentListItem'
+  name: 'ContentListItem',
+  data () {
+    return {
+      todos: [
+        { text: '学习 JavaScript' },
+        { text: '学习 Vue' },
+        { text: '整个牛项目' }
+      ]
+    }
+  }
 }
 </script>
