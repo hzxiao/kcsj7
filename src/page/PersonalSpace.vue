@@ -27,7 +27,7 @@
         <div ></div>
     </div>
     <!-- 主要内容 -->
-    <div class="content mTo10">
+    <div class="content mT10">
         <div class="leftSide">
             <dl class="border">
                 <dt class="caption"><strong>博主资料</strong></dt>

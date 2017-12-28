@@ -6,7 +6,8 @@
     background-attachment: scroll;
     background-position: center 31px;
     background-color: #9CAEC1;
-    margin: 0;
+    width: 1170px;
+    margin: auto;
 }
 
 #headTop {
@@ -127,7 +128,7 @@
     *margin-top: -2px;
 }
 
-.mTo10 {
+.mT10 {
     margin-top: 10px;
 }
 
@@ -264,4 +265,18 @@ a:link,
 a:visited {
     color: #074387;
     text-decoration: none;
+}
+
+.lh20 {
+    line-height: 20px;
+}
+
+.mL10 {
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
