@@ -1,67 +1,63 @@
 <style>
 .m_container{
     width:1170px;
+    margin:auto;
 }
+
 .fl{float:left;}
 .fr{float:right;}
 .cf{clear:both; overflow: hidden;}
 
-/**********************************************************/
-.ChildPage1 li,ul,p{list-style: none;padding: 0;margin:0;}
-.ChildPage1 .M_header .box{
-    height:100px;
-    margin:auto;
-    margin: 20px auto 25px auto;
+.MainPage > .box .left{
+    width:810px;
+    height:auto;
 }
-.ChildPage1 .M_header .box .left{
-    width: 100px;
-    height: 100%;
-    background-color: #3f3f3f;
-    margin:0px 20px;
+.MainPage > .box .right{
+    width:345px;
+    height: auto
 }
-/* 外框 */
-.MainPage .M_header .box .right .top{margin-bottom: 15px;}
-.MainPage .M_header .box .right .top *{font-size:40px;}
-.MainPage .M_header .box .right .bottom *{font-size:25px;}
-
-.MainPage .M_nav{height:auto; width:100%;background-color: #74c2f7; padding: 12px 0px;}
-.MainPage .M_nav .box{height:24px; margin: auto;}
-.MainPage .M_nav .box ul li{float:left;margin:0px 15px;}
 </style>
 
 <template>
-    <div class="MainPage">
-        <header class="M_header">
-            <div class="box m_container cf">
-                <div class="left fl">
-                    <img src="" alt="没图片">
-                </div>
-                <div class="right fl">
-                    <div class="top"><p>郭智均</p></div>
-                    <div class="bottom"><p>非常帅气、非常叼、能上天、能遁地</p></div>
-                </div>
-            </div>
-        </header>
-        <nav class="M_nav">
-            <div class="box m_container cf">
-                <ul class="fl">
-                    <li><router-link to="./page0">主页</router-link></li>
-                    <li><router-link to="./page1">前端面试通</router-link></li>
-                    <li><router-link to="./page1">大前端知识</router-link></li>
-                    <li><router-link to="./page1">匿名社区</router-link></li>
-                </ul>
-                <ul class="fr">
-                    <li>登录</li>
-                    <li>|</li>
-                    <li>注册</li>
-                </ul>
-            </div>
+    <div class="MainPage m_container">
+        <div class="page-header">
+          <h1>Example page header <small>Subtext for header</small></h1>
+        </div>
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <ul class="nav navbar-nav">
+                <li class="active"><router-link to="/MainPage/page0">主页</router-link></li>
+                <li><router-link to="/MainPage/Page2">前端面试通</router-link></li>
+                <li><router-link to="/MainPage/Page1">大前端知识</router-link></li>
+                <li><router-link to="/MainPage/Page1">匿名社区</router-link></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
         </nav>
-        <router-view></router-view>
+        <!-- vp:viewport -->
+        <div class="box cf">
+            <div class="left fl">
+                <router-view class="road-nav" name="road_nav"></router-view>
+                <router-view class="content-vp" name="content_vp"></router-view>
+            </div>
+            <div class="right fr">
+                 <router-view class="column-vp" name="column_vp"></router-view>
+                <router-view class="recommend-vp" name="recommend_vp"></router-view>           
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+
 export default {
   name: 'MainPage'
 }
