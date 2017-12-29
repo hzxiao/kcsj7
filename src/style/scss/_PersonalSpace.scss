@@ -8,9 +8,9 @@
     background-color: #9CAEC1;
     width: 100%;
     margin: auto;
-    &>div{
-        width:1280px;
-        margin:auto;
+    &>div {
+        width: 1280px;
+        margin: auto;
     }
 }
 
@@ -147,15 +147,11 @@
     float: left;
 }
 
-.midContent {
-    width: 730px;
-    float: right;
-}
-
 .border {
     border: 1px solid #919BA2;
     background-color: #EBEEF3;
     padding: 1px;
+    margin: 0;
 }
 
 .caption {
@@ -283,4 +279,176 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.midContent {
+    width: 730px;
+    float: right;
+}
+
+dd {
+    margin: 0;
+    padding: 0;
+    line-height: 1.42857143;
+}
+
+.mp10 {
+    margin: 10px;
+    padding: 10px;
+}
+
+.mB10 {
+    margin-bottom: 10px;
+}
+
+.fLeft {
+    float: left;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.mL5 {
+    margin-left: 5px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.lh22 {
+    line-height: 22px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.aBlack,
+.blackA a:link,
+.blackA a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+#artInfo {
+    margin-top: 30px;
+    li {
+        font-size: 11px;
+        margin-left: -1px;
+        padding-left: 10px;
+        border-left: 1px solid #CCC;
+        height: 12px;
+        line-height: 12px;
+        margin-right: 10px;
+    }
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.fRight {
+    float: right;
+    li {
+        float: left;
+    }
+}
+
+.tList {
+    border: 1px solid #dddddd;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.tList tbody tr {
+    background-color: #fff;
+}
+
+.tList tbody tr td {
+    vertical-align: top;
+}
+
+.tList th,
+.tList td {
+    line-height: 25px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.mT10 {
+    margin-top: 10px;
+}
+
+.allList {
+    width: 100%;
+    clear: both;
+    img {
+        float: left;
+        margin-right: 10px;
+        overflow: hidden;
+    }
+    .txt {
+        overflow: hidden;
+    }
+    .p2 {
+        color: #666;
+    }
+}
+
+.pTB10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h5 {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.mTB10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
