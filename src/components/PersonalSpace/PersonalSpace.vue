@@ -257,9 +257,14 @@ export default {
     data() {
       return {
         message: 'Hello Vue.js!',
-        //  article:true,
+         article:false,
       }
+    },
+    created() {
+        console.log("xx");
     }
 }
-console.log("xx")
+
+
+
 </script>

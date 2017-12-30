@@ -11,7 +11,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            '/kcsj/**': {
+            '/kcsj7/**': {
                 target: '111.230.242.177:8081',
                 secure: false,
                 changeOrigin: false
