@@ -37,7 +37,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
+              <li><router-link to="/BackstageMain/">后台</router-link></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
