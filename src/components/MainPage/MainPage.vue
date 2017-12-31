@@ -28,11 +28,10 @@
         <div class="container-fluid">
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
             <ul class="nav navbar-nav">
-              <li class="active"><router-link to="/MainPage/page0">主页</router-link></li>
-              <li><router-link to="/MainPage/Page2">前端面试通</router-link></li>
-              <li><router-link to="/MainPage/Page3">大前端知识</router-link></li>
+              <li v-bind:class="{active: activeIdx === 0}" @click="NavClickEvent(0, 2, '/MainPage/page0', '主页')"><router-link to="/MainPage/page0">主页</router-link></li>
+              <li v-bind:class="{active: activeIdx === 2}" @click="NavClickEvent(2, 2, '/MainPage/page3', '前端面试通')"><router-link to="/MainPage/Page2">前端面试通</router-link></li>
+              <li v-bind:class="{active: activeIdx === 3}" @click="NavClickEvent(3, 2, '/MainPage/page3', '大前端知识')"><router-link to="/MainPage/Page3">大前端知识</router-link></li>
 <!--              <li><router-link to="/MainPage/Page0">匿名社区</router-link></li>-->
             </ul>
 
@@ -45,7 +44,7 @@
       <!-- vp:viewport -->
       <div class="box cf">
         <div class="left fl">
-          <router-view class="road-nav" name="road_nav"></router-view>
+          <router-view v-bind:paths="paths" class="road-nav" name="road_nav"></router-view>
           <router-view class="content-vp" name="content_vp"></router-view>
         </div>
         <div class="right fr">
@@ -62,6 +61,22 @@
 <script>
 
 export default {
-  name: 'MainPage'
+  name: 'MainPage',
+  data () {
+    return {
+      activeIdx: 0,
+      paths: [
+        {'path': '/MainPage/page0', 'name': '主页'}
+      ]
+    }
+  },
+  methods: {
+    NavClickEvent: function (_activeIdx, _idx, _path, _name) {
+      while (this.paths.length >= _idx) { this.paths.pop() }
+      this.paths.push({'path': _path, 'name': _name})
+      this.activeIdx = _activeIdx
+      console.log(this.paths)
+    }
+  }
 }
 </script>

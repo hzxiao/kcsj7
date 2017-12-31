@@ -84,7 +84,7 @@
         <router-view name="r_t_InfoList1"></router-view>
       </div>
       <div class="middle cd">
-        <r_m_InfoList1 title="推荐内容" type="B" v-bind:messages="r_m_InfoList1_data" name="r_m_InfoList1"></r_m_InfoList1>
+        <r_m_InfoList1 title="推荐内容" type="B" v-bind:messages="recommendContents" name="r_m_InfoList1"></r_m_InfoList1>
       </div>
       <div class="bottom cd">
         <r_b_InfoList1 title="本月热点" type="B" v-bind:messages="r_b_InfoList1_data" name="r_b_InfoList1"></r_b_InfoList1>
@@ -94,6 +94,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import CarouselImg1 from '@/components/common/CarouselImg1'
 import InfoList1 from '@/components/common/InfoList1'
 
@@ -131,7 +132,7 @@ export default {
         {'title': '微信小程序面试题，附答', date: '12-25'},
         {'title': 'bbbbb', date: '11-25'}
       ],
-      r_m_InfoList1_data: [
+      recommendContents: [
         {'title': '类型BBBB'},
         {'title': '类型BBBBasdasdasdfsaedfs'}
       ],
@@ -139,6 +140,15 @@ export default {
         {'title': '本月热点本月热点本月热点'},
         {'title': '类型BBBBasda本月热点dasdfsaedfs'}
       ]
+    }
+  },
+  created () {
+    this.$parent.NavClickEvent(0, 1, '/MainPage/MainPage_Page0', '主页')
+    Vue.property.$api.get('ContentMgr', 'recommondContents', this.successRC, null)
+  },
+  methods: {
+    successRC: function (data) {
+      this.recommendContents = data
     }
   }
 }

@@ -40,29 +40,32 @@ export default new Router({
       name: 'MainPage',
       component: MainPage,
       children: [{
-        name: 'Page0',
-        path: 'Page0',
-        components:{
-          MainPage_Page0: MainPage_Page0
-        } 
-      }, {
-        name: 'Page2',
-        path: 'Page2',
-        components: {
-            road_nav: RoadNav,
-            content_vp: ContentList,
-            column_vp: ColumnList,
-            recommend_vp: RecommendList,
-        }
+          path: '/',
+          redirect: 'Page0'
         }, {
-            name: 'Page3',
-            path: 'Page3',
-            components: {
-                road_nav: RoadNav,
-                content_vp: ContentList,
-                column_vp: ColumnList,
-                recommend_vp: RecommendList,
-            }
+          name: 'Page0',
+          path: 'Page0',
+          components:{
+            MainPage_Page0: MainPage_Page0
+          } 
+        }, {
+          name: 'Page2',
+          path: 'Page2',
+          components: {
+              road_nav: RoadNav,
+              content_vp: ContentList,
+              column_vp: ColumnList,
+              recommend_vp: RecommendList,
+          }
+        }, {
+          name: 'Page3',
+          path: 'Page3',
+          components: {
+              road_nav: RoadNav,
+              content_vp: ContentList,
+              column_vp: ColumnList,
+              recommend_vp: RecommendList,
+          }
         }]
     }, {
         path: '/BackstageMain/',

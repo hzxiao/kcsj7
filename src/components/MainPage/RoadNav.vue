@@ -2,13 +2,20 @@
 <template>
   <!-- 这里获取数据来显示 -->
   <ol class="breadcrumb">
-    <li><router-link to="/">主页</router-link></li>
-    <li class="active">前端面试通</li>
+    <template v-for="idx in paths.length">
+      <template v-if="idx < paths.length">
+        <li><router-link v-bind:to="paths[idx-1].path">{{paths[idx-1].name}}</router-link></li>
+      </template>
+      <template v-else>
+        <li>{{paths[idx-1].name}}</li>
+      </template>
+    </template>
   </ol>
 </template>
 
 <script>
 export default {
-  name: 'RoadNav'
+  name: 'RoadNav',
+  props: ['paths']
 }
 </script>
