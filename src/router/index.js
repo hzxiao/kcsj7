@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueQuillEditor from 'vue-quill-editor'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import VueResource from 'vue-resource'
 // import HelloWorld from '@/components/HelloWorld'
@@ -13,12 +14,14 @@ import ContentList from '@/components/MainPage/ContentList'
 import RoadNav from '@/components/MainPage/RoadNav'
 import ColumnList from '@/components/MainPage/ColumnList'
 import RecommendList from '@/components/MainPage/RecommendList'
+import MainPage_Page0 from '@/components/MainPage/MainPage_Page0'
 
 import BackstageMain from '@/components/Backstage/BackstageMain'
 import ShowContents from '@/components/Backstage/ShowContents'
 import CreateContent from '@/components/Backstage/CreateContent'
 
-Vue.use(VueQuillEditor)
+Vue.use(VueQuillEditor);
+Vue.use(VueAwesomeSwiper);
 Vue.use(Router);
 Vue.use(VueResource);
 
@@ -33,28 +36,34 @@ export default new Router({
         name: '/PersonalSpace',
         component: PersonalSpace
     }, {
-        path: '/MainPage',
-        name: 'MainPage',
-        component: MainPage,
-        children: [{
-            name: 'Page2',
-            path: 'Page2',
+      path: '/MainPage',
+      name: 'MainPage',
+      component: MainPage,
+      children: [{
+        name: 'Page0',
+        path: 'Page0',
+        components:{
+          MainPage_Page0: MainPage_Page0
+        } 
+      }, {
+        name: 'Page2',
+        path: 'Page2',
+        components: {
+            road_nav: RoadNav,
+            content_vp: ContentList,
+            column_vp: ColumnList,
+            recommend_vp: RecommendList,
+        }
+        }, {
+            name: 'Page3',
+            path: 'Page3',
             components: {
                 road_nav: RoadNav,
                 content_vp: ContentList,
                 column_vp: ColumnList,
                 recommend_vp: RecommendList,
             }
-            }, {
-                name: 'Page3',
-                path: 'Page3',
-                components: {
-                    road_nav: RoadNav,
-                    content_vp: ContentList,
-                    column_vp: ColumnList,
-                    recommend_vp: RecommendList,
-                }
-            }]
+        }]
     }, {
         path: '/BackstageMain/',
         name: 'BackstageMain',

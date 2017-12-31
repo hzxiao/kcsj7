@@ -33,7 +33,7 @@
               <li class="active"><router-link to="/MainPage/page0">主页</router-link></li>
               <li><router-link to="/MainPage/Page2">前端面试通</router-link></li>
               <li><router-link to="/MainPage/Page3">大前端知识</router-link></li>
-              <li><router-link to="/MainPage/Page1">匿名社区</router-link></li>
+<!--              <li><router-link to="/MainPage/Page0">匿名社区</router-link></li>-->
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -52,6 +52,9 @@
           <router-view class="column-vp" name="column_vp"></router-view>
           <router-view class="recommend-vp" name="recommend_vp"></router-view>
         </div>
+      </div>
+      <div class="MainBox cf">
+        <router-view name="MainPage_Page0"></router-view>
       </div>
     </div>
 </template>
