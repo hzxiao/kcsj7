@@ -10,10 +10,10 @@ import MainPage from '@/components/MainPage/MainPage'
 import PersonalSpace from '@/components/PersonalSpace/PersonalSpace'
 import Register from '@/components/Register/Register'
 import Login from '@/components/Login/Login'
-import ContentList from '@/components/MainPage/ContentList'
-import RoadNav from '@/components/MainPage/RoadNav'
-import ColumnList from '@/components/MainPage/ColumnList'
-import RecommendList from '@/components/MainPage/RecommendList'
+//import ContentList from '@/components/MainPage/ContentList'
+//import RoadNav from '@/components/MainPage/RoadNav'
+//import ColumnList from '@/components/MainPage/ColumnList'
+//import RecommendList from '@/components/MainPage/RecommendList'
 import MainPage_Page0 from '@/components/MainPage/MainPage_Page0'
 
 import BackstageMain from '@/components/Backstage/BackstageMain'
@@ -50,22 +50,7 @@ export default new Router({
           } 
         }, {
           name: 'Page2',
-          path: 'Page2',
-          components: {
-              road_nav: RoadNav,
-              content_vp: ContentList,
-              column_vp: ColumnList,
-              recommend_vp: RecommendList,
-          }
-        }, {
-          name: 'Page3',
-          path: 'Page3',
-          components: {
-              road_nav: RoadNav,
-              content_vp: ContentList,
-              column_vp: ColumnList,
-              recommend_vp: RecommendList,
-          }
+          path: 'Page2'
         }]
     }, {
         path: '/BackstageMain/',
