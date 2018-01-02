@@ -118,6 +118,9 @@ export default {
           account:{},
       }
   },
+  created(){
+    console.log(this.account)
+  },
   methods: {
       login() {
           console.log(this.account),

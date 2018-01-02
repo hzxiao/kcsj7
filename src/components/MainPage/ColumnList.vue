@@ -12,9 +12,9 @@
   <div class="box">
     <div class="top"><p>栏目列表</p></div>
     <div class="bottom cf">
-      <template v-for="i in 3">
+      <template v-for="item in columnList">
         <div class="item fl">
-          <p>HTML5</p>
+          <p>{{item.programa_name}}</p>
         </div>
       </template>
     </div>
@@ -23,6 +23,10 @@
 
 <script>
 export default {
-  name: 'ColumnList'
+  name: 'ColumnList',
+  props: ["columnList"],
+  created (){
+    ;
+  },
 }
 </script>

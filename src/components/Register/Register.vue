@@ -1,21 +1,23 @@
 <template>
   <div class="Register">
       	<div class="container">
-		      <form class="form-login" action="index.html">
+<!-- 		      <form class="form-login"> -->
 		        <h2 class="form-login-heading">sign up now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="Username" autofocus>
+		            <input type="text" class="form-control" placeholder="Username" autofocus v-model="user.username">
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password">
+		            <input type="password" class="form-control" placeholder="Password" v-model="pwd1">
                     <br>
-                    <input type="password" class="form-control" placeholder="Check Password">
+                    <input type="password" class="form-control" placeholder="Check Password" v-model="pwd2">
+                    <br/>
+                    <input type="text" class="form-control" placeholder="Email" v-model="user.email">
                     <br/>
 		            <!-- <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
 		                </span>
 		            </label> -->
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN UP</button>
+		            <button class="btn btn-theme btn-block" @click="Register()" type="submit"><i class="fa fa-lock"></i> SIGN UP</button>
 		            <hr>
 		            
 		            <div class="registration">
@@ -28,7 +30,7 @@
 		        </div>
 		
 		          <!-- Modal -->
-		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+<!-- 		          <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">
 		                  <div class="modal-content">
 		                      <div class="modal-header">
@@ -37,7 +39,7 @@
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>Enter your e-mail address below to reset your password.</p>
-		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix" v-model="user.email">
 		
 		                      </div>
 		                      <div class="modal-footer">
@@ -46,9 +48,9 @@
 		                      </div>
 		                  </div>
 		              </div>
-		          </div>
+		          </div> -->
 		          <!-- modal -->
-		      </form>	  	
+<!-- 		      </form>	   -->	
 	  	</div>
   </div>
 </template>
@@ -112,7 +114,35 @@ label {
 </style>
 
 <script>
+import Login from "@/components/Login/Login"
+
 export default {
-  
+  data() {
+    return {
+      user: {},
+      pwd1: null,
+      pwd2: null,
+    }
+  },
+  methods: {
+    Register: function(){
+      if(this.pwd1 != null && this.pwd1 == this.pwd2){
+        this.user.pwd = this.pwd1
+        this.$api.post('user/register', this.user, this.RegisterEvent)
+      }else{
+        console.log("两次密码不同")
+      }
+    },
+    RegisterEvent: function(rData){
+      if(rData.code === this.$code.LOGIN_SUCCESS){
+        console.log("注册成功")
+        Login.data().account.username = this.user.username
+        Login.data().account.pwd = this.pwd
+        this.$router.push("/Login")
+      }else{
+        console.log("注册失败:" + rData)
+      }
+    }
+  }
 }
 </script>

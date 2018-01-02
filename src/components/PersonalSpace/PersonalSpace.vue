@@ -5,11 +5,11 @@
           <div class="logo" title="网站主页"></div>
           <div id="topBar">
             <ul>
-                <li><a href="#">网站主页</a></li>
-                <li><a>我的资料</a></li>
+                <li><a @click="GoToOtherPage('/MainPage')">网站主页</a></li>
+                <!-- <li><a>我的资料</a></li>
                 <li><a>我的空间</a></li>
-                <li><a>注销</a></li>
-                <li><a>帮助</a></li>
+                <li><a >注销</a></li> -->
+                <!-- <li><a>帮助</a></li> -->
             </ul>
           </div>
         </div>
@@ -20,9 +20,9 @@
                 <p>http:</p>
             </div>
             <ul id="navMenu" class="fLeftChild">
-                <li class="thisClass"><a href="index.php?uid=smith"><span>首页</span></a></li>
-                <li><a href="index.php?uid=smith&action=article"><span>文章</span></a></li>
-                <li><a href="index.php?uid=smith&action=infos"><span>个人资料</span></a></li>
+                <li class="thisClass"><a @click="GoToOtherPage('/MainPage')"><span>首页</span></a></li>
+                <li><a @click="GoToOtherPage('/BackstageMain')"><span>文章</span></a></li>
+                <!-- <li><a href="index.php?uid=smith&action=infos"><span>个人资料</span></a></li> -->
                 <li><a href="index.php?uid=smith&action=guestbook"><span>留言板</span></a></li>
             </ul>
             <div ></div>
@@ -251,7 +251,7 @@
     </div>
 </template>
 
-<<script>
+<script>
 export default {
     id: "c",
     data() {
@@ -264,6 +264,12 @@ export default {
     created() {
         if(this.userInfo == null)
             this.$router.push("/")
+    },
+    methods:{
+        GoToOtherPage: function(url){
+            console.log("ok")
+            this.$router.push(url);
+        }
     }
 }
 
