@@ -1,7 +1,7 @@
 <template>
   <div class="Register">
       	<div class="container">
-<!-- 		      <form class="form-login"> -->
+		      <form class="form-login">
 		        <h2 class="form-login-heading">sign up now</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" placeholder="Username" autofocus v-model="user.username">
@@ -50,7 +50,7 @@
 		              </div>
 		          </div> -->
 		          <!-- modal -->
-<!-- 		      </form>	   -->	
+		      </form>	  	
 	  	</div>
   </div>
 </template>
