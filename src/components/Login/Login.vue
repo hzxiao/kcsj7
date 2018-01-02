@@ -132,9 +132,9 @@ export default {
             this.setCookie("user", JSON.stringify(rData.data.user), null)
             this.userInfo = rData.data.user
             this.$router.push('/MainPage')
-         }
-          else
-             console.log("no")
+         } else {
+            this.$layer.msg("登录失败");
+          }
       }
   }
 }

@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueQuillEditor from 'vue-quill-editor'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import layer from 'vue-layer'
 
 import VueResource from 'vue-resource'
 // import HelloWorld from '@/components/HelloWorld'
@@ -24,6 +25,7 @@ Vue.use(VueQuillEditor);
 Vue.use(VueAwesomeSwiper);
 Vue.use(Router);
 Vue.use(VueResource);
+Vue.prototype.$layer = layer(Vue);
 
 export default new Router({
     routes: [{
@@ -36,34 +38,34 @@ export default new Router({
         name: '/PersonalSpace',
         component: PersonalSpace
     }, {
-      path: '/MainPage',
-      name: 'MainPage',
-      component: MainPage,
-      children: [{
-          path: '/',
-          redirect: 'Page0'
+        path: '/MainPage',
+        name: 'MainPage',
+        component: MainPage,
+        children: [{
+            path: '/',
+            redirect: 'Page0'
         }, {
-          name: 'Page0',
-          path: 'Page0',
-          components:{
-            MainPage_Page0: MainPage_Page0
-          } 
+            name: 'Page0',
+            path: 'Page0',
+            components: {
+                MainPage_Page0: MainPage_Page0
+            }
         }, {
-          name: 'Page2',
-          path: 'Page2'
+            name: 'Page2',
+            path: 'Page2'
         }]
     }, {
         path: '/BackstageMain/',
         name: 'BackstageMain',
         component: BackstageMain,
         children: [{
-          path: '/',
-          name: 'ShowContents',
-          component: ShowContents
+            path: '/',
+            name: 'ShowContents',
+            component: ShowContents
         }, {
-          path: 'CreateContent',
-          name: 'CreateContent',
-          component: CreateContent
+            path: 'CreateContent',
+            name: 'CreateContent',
+            component: CreateContent
         }]
     }, {
         path: '/Login',
