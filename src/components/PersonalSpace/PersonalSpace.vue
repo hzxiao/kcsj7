@@ -34,7 +34,7 @@
                     <dt class="caption"><strong>博主资料</strong></dt>
                     <dd class="body" id="userInfo"> 
                         <a class="pic" href="index.php?uid=smith&amp;action=infos" title="我的资料">   
-                            <h4 style=" text-align:center">史密斯</h4> 
+                            <h4 style=" text-align:center">{{userInfo.username}}</h4> 
                             <img src="static/image/photo.png" alt="史密斯的头像"> 
                         </a>
                         <div class="textCenter dashed pB10">
@@ -258,10 +258,12 @@ export default {
       return {
         message: 'Hello Vue.js!',
          article:false,
+         userInfo: JSON.parse(this.getCookie("user"))
       }
     },
     created() {
-        console.log("xx");
+        if(this.userInfo == null)
+            this.$router.push("/")
     }
 }
 

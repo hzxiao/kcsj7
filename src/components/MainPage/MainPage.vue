@@ -36,7 +36,14 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><router-link to="/BackstageMain/">后台</router-link></li>
+              <template v-if="this.userInfo === null">
+                <li><router-link to="/Login">登录</router-link></li>
+                <li><router-link to="/Register">注册</router-link></li>
+              </template>
+              <template v-else>
+                <li><router-link to="/BackstageMain/">{{this.userInfo.username}}的后台</router-link></li>
+                <li><router-link to="/MainPage/" @click.native="Logout()">注销</router-link></li>
+              </template>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -68,10 +75,14 @@ export default {
   data () {
     return {
       activeIdx: 0,
-      isMainPage_Page0: true
+      isMainPage_Page0: true,
+      userInfo: JSON.parse(this.getCookie("user"))
     }
   },
   create () {
+    //this.userInfo = JSON.parse(this.getCookie("username"))
+    // console.log("adasd")
+    // this.userInfo = this.getCookie("username")
     this.NavClickEvent(0)
   },
   components: {
@@ -86,6 +97,15 @@ export default {
 
       if (_activeIdx === 0) this.isMainPage_Page0 = true
       else this.isMainPage_Page0 = false
+    },
+    Logout: function(){
+      // console.log("Asdsadas")
+      this.delCookie("user")
+      this.userInfo = null
+    },
+    Debug: function(){
+      console.log(this.userInfo)
+      console.log(JSON.parse(this.getCookie("username")))
     }
   }
 }

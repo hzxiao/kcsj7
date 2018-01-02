@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import CarouselImg1 from '@/components/common/CarouselImg1'
 import InfoList1 from '@/components/common/InfoList1'
 
@@ -143,8 +142,9 @@ export default {
     }
   },
   created () {
+    // 获取数据
     this.$parent.NavClickEvent(0, 1, '/MainPage/MainPage_Page0', '主页')
-    Vue.property.$api.get('ContentMgr', 'recommondContents', this.successRC, null)
+    //Vue.property.$api.get('ContentMgr', 'recommondContents', this.successRC, null)
   },
   methods: {
     successRC: function (data) {

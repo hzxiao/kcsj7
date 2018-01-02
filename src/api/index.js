@@ -1,5 +1,5 @@
 // 配置API接口地址
-var root = 'http://111.230.242.177:8081/kcsj7/'
+var root = 'http://111.230.242.177:8081/kcsj/'
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS
@@ -36,24 +36,17 @@ function apiAxios (method, url, params, success, failure) {
     withCredentials: false
   })
   .then(function (res) {
-    if (res.data.success === true) {
       if (success) {
         success(res.data)
       }
-    } else {
-      if (failure) {
-        failure(res.data)
-      } else {
-        window.alert('error: ' + JSON.stringify(res.data))
-      }
-    }
   })
-  .catch(function (err) {
-    let res = err.response
-    if (err) {
-      window.alert('api error, HTTP CODE: ' + res.status)
-    }
-  })
+  // .catch(function (err) {
+  //   let res = err.response
+  //   if (err) {
+  //     console.log(err)
+  //     window.alert('api error, HTTP CODE: ' + res.status)
+  //   }
+  // })
 }
 // 返回在vue模板中的调用接口
 export default {
