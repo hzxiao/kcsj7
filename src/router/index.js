@@ -3,7 +3,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueQuillEditor from 'vue-quill-editor'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import layer from 'vue-layer'
 
 import VueResource from 'vue-resource'
 // import HelloWorld from '@/components/HelloWorld'
@@ -25,7 +24,6 @@ Vue.use(VueQuillEditor);
 Vue.use(VueAwesomeSwiper);
 Vue.use(Router);
 Vue.use(VueResource);
-Vue.prototype.$layer = layer(Vue);
 
 export default new Router({
     routes: [{
