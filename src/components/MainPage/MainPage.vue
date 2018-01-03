@@ -46,7 +46,7 @@
             <template v-else>
               <li class="nav-item"><router-link class="nav-link" to="/BackstageMain/">{{this.userInfo.username}}的后台</router-link></li>
               <li class="nav-item"><router-link class="nav-link" to="/PersonalSpace/">我的空间</router-link></li>
-              <li class="nav-item"><a class="nav-link" href="/" @click.native="Logout()">注销</a></li>
+              <li class="nav-item"><router-link class="nav-link" to="#" @click.native="Logout()">注销</router-link></li>
             </template>
           </div>
         </div><!-- /.container-fluid -->
