@@ -16,52 +16,39 @@
     width:345px;
     height: auto
 }
-.navbar {
-  background-color: #00645d;
+
+.MainBox {
+  margin-top: 20px;
 }
-.navbar > .m_container > .navbar-collapse > .nav > li > a {
-  color: #fff !important;
-}
-.navbar > .m_container > .navbar-collapse > .nav > li.active {
-  background-color: #333 !important;
-}
-.nav>li>a:focus {
-  background-color: #333 !important;
-}
-.nav>li>a:hover {
-  text-decoration: none;
-  background-color: #777;
-}
+
 </style>
 
 <template>
     <div class="MainPage">
-      <div class="page-header m_container">
-        <h1>Example page header <small>Subtext for header</small></h1>
-      </div>
-
-      <nav class="navbar">
+      <nav class="navbar navbar-expand navbar-blue">
         <div class="container-fluid m_container">
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li v-bind:class="{active: activeIdx === 0}" @click="NavClickEvent(0)"><router-link to="/MainPage/page0">主页</router-link></li>
-              <li v-bind:class="{active: activeIdx === 2}" @click="NavClickEvent(2)"><router-link to="/MainPage/Page2">前端面试通</router-link></li>
-<!--              <li v-bind:class="{active: activeIdx === 3}" @click="NavClickEvent(3, 2, '/MainPage/page3', '大前端知识')"><router-link to="/MainPage/Page3">大前端知识</router-link></li>-->
-<!--              <li><router-link to="/MainPage/Page0">匿名社区</router-link></li>-->
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-              <template v-if="this.userInfo === null">
-                <li><router-link to="/Login">登录</router-link></li>
-                <li><router-link to="/Register">注册</router-link></li>
-              </template>
-              <template v-else>
-                <li><router-link to="/BackstageMain/">{{this.userInfo.username}}的后台</router-link></li>
-                <li><router-link to="/MainPage/" @click.native="Logout()">注销</router-link></li>
-              </template>
+              <li class="nav-item" @click="NavClickEvent(0)">
+                <router-link class="nav-link" linkActiveClass="active"  to="/MainPage/page0">主页</router-link>
+              </li>
+              <li class="nav-item" :class="{active: activeIdx === 2}" @click="NavClickEvent(2)">
+                <router-link class="nav-link" to="/MainPage/Page2">前端面试通</router-link>
+              </li>
             </ul>
           </div><!-- /.navbar-collapse -->
+          <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <template v-if="this.userInfo === null">
+              <li class="nav-item"><router-link class="nav-link" to="/Login">登录</router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/Register">注册</router-link></li>
+            </template>
+            <template v-else>
+              <li class="nav-item"><router-link class="nav-link" to="/BackstageMain/">{{this.userInfo.username}}的后台</router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/PersonalSpace/">我的空间</router-link></li>
+              <li class="nav-item"><a class="nav-link" href="/" @click.native="Logout()">注销</a></li>
+            </template>
+          </div>
         </div><!-- /.container-fluid -->
       </nav>
       <!-- vp:viewport -->
@@ -75,6 +62,7 @@
           <recommend_vp class="recommend-vp" name="recommend_vp"></recommend_vp>
         </div>
       </div>
+
       <div class="MainBox cf m_container" v-show="isMainPage_Page0">
         <router-view name="MainPage_Page0"></router-view>
       </div>

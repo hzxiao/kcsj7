@@ -1,4 +1,3 @@
-
 <template>
   <InfoShow v-bind:paths="paths"></InfoShow>
 </template>

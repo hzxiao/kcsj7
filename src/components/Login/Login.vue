@@ -1,6 +1,5 @@
 <style>
 .Login{
-    background-color: #48bcb4;
     min-height: 1000px;
     height: auto;
 }
@@ -8,6 +7,7 @@
     max-width: 330px;
     margin: 100px auto 0;
     background: #fff;
+	  border: 1px solid #89898989;
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
