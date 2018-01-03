@@ -1,6 +1,6 @@
-<style>
+<style scoped>
 .m_container{
-    width:1170px;
+    width:1170px !important;
     margin:auto;
 }
 
@@ -16,16 +16,32 @@
     width:345px;
     height: auto
 }
+.navbar {
+  background-color: #00645d;
+}
+.navbar > .m_container > .navbar-collapse > .nav > li > a {
+  color: #fff !important;
+}
+.navbar > .m_container > .navbar-collapse > .nav > li.active {
+  background-color: #333 !important;
+}
+.nav>li>a:focus {
+  background-color: #333 !important;
+}
+.nav>li>a:hover {
+  text-decoration: none;
+  background-color: #777;
+}
 </style>
 
 <template>
-    <div class="MainPage m_container">
-      <div class="page-header">
+    <div class="MainPage">
+      <div class="page-header m_container">
         <h1>Example page header <small>Subtext for header</small></h1>
       </div>
 
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
+      <nav class="navbar">
+        <div class="container-fluid m_container">
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -49,7 +65,7 @@
         </div><!-- /.container-fluid -->
       </nav>
       <!-- vp:viewport -->
-      <div class="box cf" v-show="!isMainPage_Page0">
+      <div class="m_container box cf" v-show="!isMainPage_Page0">
         <div class="left fl">
           <VueInterviewing v-show="activeIdx === 2"></VueInterviewing>
           <ContentDetailInfo></ContentDetailInfo>
@@ -59,7 +75,7 @@
           <recommend_vp class="recommend-vp" name="recommend_vp"></recommend_vp>
         </div>
       </div>
-      <div class="MainBox cf" v-show="isMainPage_Page0">
+      <div class="MainBox cf m_container" v-show="isMainPage_Page0">
         <router-view name="MainPage_Page0"></router-view>
       </div>
     </div>

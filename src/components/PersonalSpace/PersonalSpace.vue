@@ -5,7 +5,7 @@
           <div class="logo" title="网站主页"></div>
           <div id="topBar">
             <ul>
-                <li><a href="#">网站主页</a></li>
+                <li><router-link to="/">网站主页</router-link></li>
                 <li><a>我的资料</a></li>
                 <li><a>我的空间</a></li>
                 <li><a>注销</a></li>
