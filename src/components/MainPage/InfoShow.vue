@@ -1,8 +1,8 @@
 <template>
   <div class="InfoShow">
     <div class="left fl">
-      <road_nav v-bind:paths="paths" class="road-nav" name="road_nav"></road_nav>
-      <content_vp class="content-vp" name="content_vp"></content_vp>
+      <road-nav v-bind:paths="paths" class="road-nav" name="road_nav"></road-nav>
+      <content-vp class="content-vp" name="content_vp"></content-vp>
     </div>
   </div>
 </template>
@@ -15,8 +15,8 @@ export default {
   name: 'InfoShow',
   props: ['paths'],
   components: {
-    'road_nav': RoadNav,
-    'content_vp': ContentList
+    'road-nav': RoadNav,
+    'content-vp': ContentList
   }
 }
 </script>

@@ -5,6 +5,7 @@
    
   .BackstageMain li{
     padding-top: 10px; padding-bottom: 10px; line-height: 20px;
+    //list-style: none;
   }
   .BackstageMain .nav_contianer{
     width:1170px;
