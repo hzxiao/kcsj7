@@ -7,7 +7,7 @@
     width: 100%; height:47px;
     border-bottom: 3px solid #efefef;
     padding: 0px 50px;
-    background: #c0ff92;
+    background: #00645D;
   }
   .ShowContents_box .btn-group button{
     margin:auto 20px;
@@ -15,6 +15,12 @@
   .ShowContents_box .bottom{
     margin-right: 30px;
   }
+    .ShowContents_box .contentList .container-fluid .row{
+        height: 40px;
+        line-height: 40px;
+        
+        border-bottom: 1px solid rgba(22,22,22,.1);
+    }
 </style>
 
 <template>

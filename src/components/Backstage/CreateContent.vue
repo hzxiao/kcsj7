@@ -7,7 +7,7 @@
   .top {
     padding-bottom: 30px;
     .title {
-      color: chocolate;
+      color: #fff;
     }
     .infoBox {
       padding: 0px 30px;
