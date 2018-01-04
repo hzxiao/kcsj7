@@ -7,7 +7,11 @@
 .fl{float:left;}
 .fr{float:right;}
 .cf{clear:both; overflow: hidden;}
-
+    .MainPage > .box{
+          width:1170px;
+          margin:auto;
+    }
+    
 .MainPage > .box .left{
     width:810px;
     height:auto;
@@ -16,19 +20,38 @@
     width:345px;
     height: auto
 }
+.logo img{
+    padding-left: 50px;
+    }
+.MainPage > nav .zhuye{
+    background-color: #00645D;
+    
+    }
+.MainPage > nav .zhuye div ul li a{
+    color: #fff;
+}
+.MainPage > nav .zhuye div ul li a:hover{
+     color: yellow;
+    }
+.MainPage > nav{
+        width: 100%;
+        background-color: #00645D;
+    }
 </style>
 
 <template>
-    <div class="MainPage m_container">
-      <div class="page-header">
-        <h1>Example page header <small>Subtext for header</small></h1>
+    <div class="MainPage">
+      <div class="page-header logo  m_container">
+          <img src="../../../static/image/logo.gif">
+<!--        <h1>Example page header <small>Subtext for header</small></h1>-->
       </div>
 
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid zhuye  m_container">
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+          <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav ziti">
+<!-- >>>>>>> a3f08916e0a5779b6b569e7a1adb4e317fec6721 -->
               <li v-bind:class="{active: activeIdx === 0}" @click="NavClickEvent(0)"><router-link to="/MainPage/page0">主页</router-link></li>
               <li v-bind:class="{active: activeIdx === 2}" @click="NavClickEvent(2)"><router-link to="/MainPage/Page2">前端面试通</router-link></li>
 <!--              <li v-bind:class="{active: activeIdx === 3}" @click="NavClickEvent(3, 2, '/MainPage/page3', '大前端知识')"><router-link to="/MainPage/Page3">大前端知识</router-link></li>-->
@@ -66,9 +89,14 @@
           <recommend_vp class="recommend-vp" name="recommend_vp"></recommend_vp>
         </div>
       </div>
-      <div class="MainBox cf" v-show="isMainPage_Page0">
+<!-- <<<<<<< HEAD
+      <div class="MainBox cf" v-show="isMainPage_Page0"> -->
+<!-- ======= -->
+      <div class="m_container MainBox cf" v-show="isMainPage_Page0">
+<!-- >>>>>>> a3f08916e0a5779b6b569e7a1adb4e317fec6721 -->
         <router-view name="MainPage_Page0"></router-view>
       </div>
+      <div class=""></div>
     </div>
 </template>
 

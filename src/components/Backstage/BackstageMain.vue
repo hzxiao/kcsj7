@@ -2,9 +2,10 @@
   .fl{float:left;}
   .fr{float:right;}
   .cf{clear:both; overflow: hidden;}
-  
+   
   .BackstageMain li{
     padding-top: 10px; padding-bottom: 10px; line-height: 20px;
+    //list-style: none;
   }
   .BackstageMain .nav_contianer{
     width:1170px;
@@ -23,11 +24,12 @@
     background: #efefef;
   }
   .BackstageMain .left{
-    width: 25%; padding: 15px;
+    width: 25%; 
     height:500px;
+    border-right: 1px dotted #efefef;
   }
   .BackstageMain .left .box {
-    width: 100%; height: 100%; padding: 50px 0px;
+    width: 100%; height: 100%; padding: 0px 0px;
     background: #fefefe;
   }
   .BackstageMain .left .header{width: 100%; background: #bcafbd;}
@@ -35,6 +37,8 @@
     width: 100%; font-size: 23px;
     padding: 5px 0px;
     margin-left:30px;
+      height:44px;
+      line-height: 44px;
   }
   .BackstageMain .left .content{width:100%; padding: 10px;}
   .BackstageMain .left .content img{
@@ -42,11 +46,21 @@
   }
   
   .BackstageMain .right{
-    width: 74%; padding: 15px 20px;
+    width: 74%; padding: 0px 0px;
     margin-right: 1%;
     height:auto;
-    background: #aaa55a;
+    background: #fff;
   }
+    .aaa{
+        color: red;
+    }
+  .BackstageMain .m_body .box .header{
+        background-color: #00645D;
+      color:#fff;
+    }
+    .BackstageMain .m_body .box .content ul li{
+        border-bottom: 1px dashed rgba(100,100,100,.8);
+    }
 </style>
 
 <template>
@@ -57,8 +71,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <router-link to="/MainPage/Page2">
-                中午好, {{userInfo.username}}[退出]
+              <router-link to="/">
+                中午好, {{userInfo.username}}[<sapn class = 'aaa'>退出</sapn>]
               </router-link>
             </li>
           </ul>
@@ -72,8 +86,9 @@
     
     <!-- -->
     <div class="m_container">
-      <div class="page-header m_header">
-        <h1>Example page header <small>Subtext for header</small></h1>
+      <div class="page-header m_header logo">
+          <img src="../../../static/image/logo.gif">   
+<!--        <h1>Example page header <small>Subtext for header</small></h1>-->
       </div>
       <div class="m_body cf">
         <div class="left fl">
@@ -85,11 +100,11 @@
               <div class="content">
                 <ul>
                   <li>
-                    <img src="">
+                    <span class="glyphicon glyphicon-book"></span>
                     <span><router-link to="./">文章</router-link></span>
                   </li>
                   <li>
-                    <img src="">
+                    <span class="glyphicon glyphicon-pencil"></span>
                     <span><router-link to="./CreateContent">写文章</router-link></span>
                   </li>
                 </ul>
@@ -101,8 +116,12 @@
                 <p>次要的东西</p>
               </div>
               <div class="content">
-                <img src="">
-                <span>管理</span>
+                  <ul>
+                      <li>
+                        <span class="glyphicon glyphicon-th"></span>
+                        <span>管理</span>
+                      </li>
+                  </ul>
               </div>
             </div>
           </div>

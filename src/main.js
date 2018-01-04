@@ -40,7 +40,7 @@ Vue.prototype.delCookie = (name) => {
     // 全局方法
 Vue.prototype.$api = api
 Vue.prototype.$code = Code.CodeInit()
-// Vue.prototype.$layer = layer(Vue);
+Vue.prototype.$layer = layer(Vue);
 
 Vue.config.productionTip = false
 
