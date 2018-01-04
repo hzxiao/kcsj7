@@ -1,5 +1,6 @@
 <template>
   <div class="c">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet">
     <div class="navbar navbar-expand navbar-blue rounded ">
       <div class="container">
         <div class="navbar-brand" title="网站主页"></div>
