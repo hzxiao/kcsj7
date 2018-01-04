@@ -80,7 +80,7 @@
           </template>
           
           <template v-if="activeIdx === 99">
-            <ContentDetailInfo></ContentDetailInfo>
+            <ContentDetailInfo v-bind:contentInfo="now_content"></ContentDetailInfo>
           </template>
         </div>
         <div class="right fr">
@@ -113,7 +113,8 @@ export default {
       activeIdx: 0,
       isMainPage_Page0: true,
       userInfo: JSON.parse(this.getCookie("user")),
-      columnList:{}
+      columnList:[],
+      now_content: null
     }
   },
   create () {
@@ -121,6 +122,7 @@ export default {
     // console.log("adasd")
     // this.userInfo = this.getCookie("username")
     this.NavClickEvent(0)
+    console.log(activeIdx)
   },
   components: {
     'VueInterviewing': VueInterviewing,

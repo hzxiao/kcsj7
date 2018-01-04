@@ -1,6 +1,6 @@
 <template>
   <div>
-    <InfoShow1 v-bind:paths="paths" v-bind:contentInfo="info"></InfoShow1>
+    <InfoShow1 v-bind:paths="paths" v-bind:contentInfo="contentInfo"></InfoShow1>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
       info:{}
     }
   },
+  props:['contentInfo'],
   components: {
     'InfoShow1': InfoShow1
   }

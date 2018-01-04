@@ -26,7 +26,7 @@
 <template>
   <div class="InfoList1">
     <div class="header">
-      <h>{{title}}</h>
+      <p>{{title}}</p>
     </div>
     <div class="bottom">
       <ul>

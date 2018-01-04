@@ -22,7 +22,7 @@
   <div class="InfoShow">
     <div class="left fl">
       <road_nav v-bind:paths="paths" class="road-nav" name="road_nav"></road_nav>
-        <content_vp v-bind:listInfo="listInfo" class="content-vp" name="content_vp"></content_vp>
+      <content_vp v-bind:listInfo="listInfo" class="content-vp" name="content_vp"></content_vp>
     </div>
   </div>
 </template>
