@@ -45,6 +45,14 @@
 export default {
   name: 'ContentListItem',
   props:['listInfo'],
+  created(){
+    console.log(this.listInfo)
+    for(var i=0,j=this.listInfo.length-1; i<j; ++i, --j){
+      let t = this.listInfo[i]
+      this.listInfo[i] = this.listInfo[j]
+      this.listInfo[j] = t
+    }
+  },
   methods:{
     getSortDesc: function(content){
       let len = content.length

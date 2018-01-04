@@ -47,8 +47,8 @@
             <div class="col-md-8">
               <div class="col-md-2">{{item.category}}</div>
               <div class="col-md-2">{{item.state}}</div>
-              <div class="col-md-2">{{item.clickCnt}}</div>
-              <div class="col-md-4">{{item.publish}}</div>
+              <div class="col-md-2">{{item.commentCount}}</div>
+              <div class="col-md-4">{{item.createDate}}</div>
               <div class="col-md-2">×</div>
             </div>
           </div>
@@ -85,23 +85,50 @@ export default{
   data () {
     return {
       items: [
-        {
-          title: 'who am i',
-          state: '未发布',
-          category: '随笔',
-          clickCnt: '100',
-          publish: '2017-11-11',
-          operation: '×'
-        }, {
-          title: 'who am i',
-          state: '未发布',
-          category: '随笔',
-          clickCnt: '100',
-          publish: '2017-11-11',
-          operation: '×'
-        }
+        // {
+        //   title: 'who am i',
+        //   state: '未发布',
+        //   category: '随笔',
+        //   commentCount: '100',
+        //   createDate: '2017-11-11',
+        //   operation: '×'
+        // }, {
+        //   title: 'who am i',
+        //   state: '未发布',
+        //   category: '随笔',
+        //   commentCount: '100',
+        //   createDate: '2017-11-11',
+        //   operation: '×'
+        // }
       ],
       pageNum: 1
+    }
+  },
+  created(){
+    this.$api.post('/article/listArticles', {userId:this.$parent.userInfo.userId}, this.GetListEvent)
+  },
+  methods:{
+    GetListEvent:function(rData){
+      if(rData.code == "0000"){
+        this.items = rData.data.articleList
+
+        for(var i=0; i<this.items.length; ++i){
+          var date = new Date(this.items[i].createDate);
+          var s = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+          + ' ' + date.getHours() + ':' + date.getMinutes();
+          this.items[i].createDate = s
+        }
+        
+        
+        console.log(s)
+        console.log(this.items.createDate)
+        //this.items.createDate = s
+
+        console.log(rData)
+        console.log(this.items)
+      }else{
+        console.log(rData.msg)
+      }
     }
   }
 }
