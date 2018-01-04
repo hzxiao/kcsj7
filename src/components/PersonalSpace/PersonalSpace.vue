@@ -290,17 +290,19 @@
         showMsgBoard: false,
         msgBoardText: null,
         menuIndex: 1,
-        viewUserId: 0,
+        viewUserId: 1,
         curLoginUser: JSON.parse(this.getCookie("user")),
         articleList: [],
         msgBoardList: [],
         userInfo: {},
       }
     },
-
+    props:["userId"],
     created() {
       // console.log(fmtTime(122))
-      this.viewUserId = this.$route.query.userId;
+      // console.log(this.userId)
+      // this.viewUserId = this.userId
+      //this.viewUserId = this.$route.query.userId;
       this.$api.post('article/listArticles', { userId: parseInt(this.viewUserId) }, this.listArticleEvent);
 
     },

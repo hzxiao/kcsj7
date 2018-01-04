@@ -79,13 +79,13 @@
           <ul class="nav navbar-nav">
             <li>
               <router-link to="/">
-                中午好, {{userInfo.username}}[<sapn class = 'aaa'>退出</sapn>]
+                中午好, {{userInfo.username}}[<span class = 'aaa'>退出</span>]
               </router-link>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><router-link to="/MainPage/Page0">主页</router-link></li>
-            <li><router-link to="/PersonalSpace">个人空间</router-link></li>
+            <li><router-link to="/PersonalSpace" v-bind:userId="userInfo.userId">个人空间</router-link></li>
           </ul>
         </div>
       </div>
