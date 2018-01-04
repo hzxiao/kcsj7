@@ -2,9 +2,9 @@
   .fl{float:left;}
   .fr{float:right;}
   .cf{clear:both; overflow: hidden;}
-   
+    .nav{height: 30px; line-height: 30px;}
   .BackstageMain li{
-    padding-top: 10px; padding-bottom: 10px; line-height: 20px;
+
     //list-style: none;
   }
   .BackstageMain .nav_contianer{
@@ -58,7 +58,14 @@
         background-color: #00645D;
       color:#fff;
     }
+    .BackstageMain .m_body .box .content ul{
+        list-style: none;
+        padding: 5px;
+        font-size: 14px;
+    }
     .BackstageMain .m_body .box .content ul li{
+        padding-left: 5px;
+        padding-top: 10px; padding-bottom: 10px; line-height: 20px;
         border-bottom: 1px dashed rgba(100,100,100,.8);
     }
 </style>
