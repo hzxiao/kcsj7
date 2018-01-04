@@ -49,13 +49,20 @@
         </div><!-- /.container-fluid -->
       </nav>
       <!-- vp:viewport -->
+
       <div class="box cf" v-show="!isMainPage_Page0">
         <div class="left fl">
-          <VueInterviewing v-show="activeIdx === 2"></VueInterviewing>
-          <ContentDetailInfo></ContentDetailInfo>
+          <template v-if="activeIdx === 2">
+            <VueInterviewing></VueInterviewing>  
+          </template>
+          
+          <template v-if="activeIdx === 99">
+            <ContentDetailInfo></ContentDetailInfo>
+          </template>
         </div>
         <div class="right fr">
-          <column_vp class="column-vp" name="column_vp"></column_vp>
+          <template v-if="activeIdx === 2"><pushlisherInfo name="pushlisherInfo"></pushlisherInfo></template>
+          <column_vp v-bind:columnList="columnList" class="column-vp" name="column_vp"></column_vp>
           <recommend_vp class="recommend-vp" name="recommend_vp"></recommend_vp>
         </div>
       </div>
@@ -70,13 +77,15 @@ import ColumnList from '@/components/MainPage/ColumnList'
 import RecommendList from '@/components/MainPage/RecommendList'
 import VueInterviewing from '@/components/MainPage/VueInterviewing'
 import ContentDetailInfo from '@/components/MainPage/ContentDetailInfo'
+import PushlisherInfo from '@/components/MainPage/PushlisherInfo'
 export default {
   name: 'MainPage',
   data () {
     return {
       activeIdx: 0,
       isMainPage_Page0: true,
-      userInfo: JSON.parse(this.getCookie("user"))
+      userInfo: JSON.parse(this.getCookie("user")),
+      columnList:{}
     }
   },
   create () {
@@ -89,7 +98,8 @@ export default {
     'VueInterviewing': VueInterviewing,
     'column_vp': ColumnList,
     'recommend_vp': RecommendList,
-    'ContentDetailInfo': ContentDetailInfo
+    'ContentDetailInfo': ContentDetailInfo,
+    'pushlisherInfo': PushlisherInfo
   },
   methods: {
     NavClickEvent: function (_activeIdx) {
@@ -97,6 +107,9 @@ export default {
 
       if (_activeIdx === 0) this.isMainPage_Page0 = true
       else this.isMainPage_Page0 = false
+    },
+    UpdataColumnListIfo: function (listInfo){
+        this.columnList = listInfo;
     },
     Logout: function(){
       // console.log("Asdsadas")

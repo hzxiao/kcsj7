@@ -14,7 +14,7 @@
     <div class="bottom cf">
       <template v-for="item in columnList">
         <div class="item fl">
-          <p>{{item.programa_name}}</p>
+          <a href="javascript(void)">{{item.programaName}}</a>
         </div>
       </template>
     </div>
