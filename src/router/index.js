@@ -36,34 +36,34 @@ export default new Router({
         name: '/PersonalSpace',
         component: PersonalSpace
     }, {
-      path: '/MainPage',
-      name: 'MainPage',
-      component: MainPage,
-      children: [{
-          path: '/',
-          redirect: 'Page0'
+        path: '/MainPage',
+        name: 'MainPage',
+        component: MainPage,
+        children: [{
+            path: '/',
+            redirect: 'Page0'
         }, {
-          name: 'Page0',
-          path: 'Page0',
-          components:{
-            MainPage_Page0: MainPage_Page0
-          } 
+            name: 'Page0',
+            path: 'Page0',
+            components: {
+                MainPage_Page0: MainPage_Page0
+            }
         }, {
-          name: 'Page2',
-          path: 'Page2'
+            name: 'Page2',
+            path: 'Page2'
         }]
     }, {
         path: '/BackstageMain/',
         name: 'BackstageMain',
         component: BackstageMain,
         children: [{
-          path: '/',
-          name: 'ShowContents',
-          component: ShowContents
+            path: '/',
+            name: 'ShowContents',
+            component: ShowContents
         }, {
-          path: 'CreateContent',
-          name: 'CreateContent',
-          component: CreateContent
+            path: 'CreateContent',
+            name: 'CreateContent',
+            component: CreateContent
         }]
     }, {
         path: '/Login',
@@ -73,5 +73,6 @@ export default new Router({
         path: '/Register',
         name: '/Register',
         component: Register
-    }]
+    }],
+    linkActiveClass: 'active'
 })

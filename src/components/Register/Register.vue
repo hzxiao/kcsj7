@@ -130,17 +130,20 @@ export default {
         this.user.pwd = this.pwd1
         this.$api.post('user/register', this.user, this.RegisterEvent)
       }else{
-        console.log("两次密码不同")
+        console.log("两次密码不同");
+        this.$layer.msg("密码不一致");
       }
     },
     RegisterEvent: function(rData){
       if(rData.code === this.$code.LOGIN_SUCCESS){
-        console.log("注册成功")
+        console.log("注册成功");
+        this.$layer.msg("注册成功, 跳转到登录页面");
         Login.data().account.username = this.user.username
         Login.data().account.pwd = this.pwd
         this.$router.push("/Login")
       }else{
         console.log("注册失败:" + rData)
+        this.$layer.msg(rData.msg);
       }
     }
   }

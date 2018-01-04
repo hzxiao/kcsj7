@@ -1,7 +1,5 @@
-
 <template>
   <div>
-    asdsad
     <InfoShow1 v-bind:paths="paths" v-bind:contentInfo="info"></InfoShow1>
   </div>
 </template>

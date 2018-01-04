@@ -1,6 +1,5 @@
 <style>
 .Login{
-    background-color: #48bcb4;
     min-height: 1000px;
     height: auto;
 }
@@ -8,6 +7,7 @@
     max-width: 330px;
     margin: 100px auto 0;
     background: #fff;
+	  border: 1px solid #89898989;
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
@@ -132,9 +132,9 @@ export default {
             this.setCookie("user", JSON.stringify(rData.data.user), null)
             this.userInfo = rData.data.user
             this.$router.push('/MainPage')
-         }
-          else
-             console.log("no")
+         } else {
+            this.$layer.msg("登录失败");
+          }
       }
   }
 }
