@@ -39,6 +39,7 @@ export default{
   methods: {
     onEditorChange ({ editor, html, text }) {
       this.content = html
+      this.$parent.UpdateContent(this.content)
     },
     show ({ editor, html, text }) {
       console.log('this content  = ' + this.content)
