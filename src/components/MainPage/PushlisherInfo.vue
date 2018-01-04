@@ -46,10 +46,10 @@
     </div>
     <div class="top cf">
       <div class="left fl">
-        <img src="asd" alt="" class="HeadImg">
+        <img src="../../../static/image/logo.jpeg" alt="" class="HeadImg">
       </div>
       <div class="right fl">
-        <p class="name">waha</p>
+        <p class="name">帅哥</p>
         <p class="ShowDetailInfo">查看详细资料</p>
       </div>
     </div>
