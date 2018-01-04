@@ -78,7 +78,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <router-link to="/MainPage/Page2">
+              <router-link to="/">
                 中午好, {{userInfo.username}}[<sapn class = 'aaa'>退出</sapn>]
               </router-link>
             </li>

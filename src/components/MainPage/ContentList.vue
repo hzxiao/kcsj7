@@ -17,23 +17,23 @@
 
 <template>
   <div  class="ContentListItem m_contain">
-    <template v-for="i in 6">
+    <template v-for="item in listInfo">
       <div class="contentBox cf">
         <div class="left fl">
           <img src="" alt="">
         </div>
         <div class="right fl">
           <div class="top cf">
-            <p class="category fl">[题库]</p>
-            <p class="title fl">91道js面试题，附必过答案</p>
+            <p class="category fl">[{{item.category}}]</p>
+            <p class="title fl">{{item.title}}</p>
           </div>
           <div class="mid cf">
-            <p class="date fl"><span>日期：</span>2017-12-18 12:21:36</p>
-            <p class="clickCount fl"><span>点击：</span>139</p>
-            <p class="good fl"><span>好评：</span>0</p>
+            <p class="date fl"><span>日期：</span>{{item.createDate}}</p>
+            <p class="clickCount fl"><span>点击：</span>{{item.viewCount}}</p>
+            <p class="good fl"><span>好评：</span>{{item.goodCommentCount}}</p>
           </div>
           <div class="bottom cf">
-            <p class="content">JavaScript的组成 JavaScript 由以下三部分组成： ECMAScript（核心）：JavaScript 语言基础 DOM（文档对象模型）：规定了访问HTML和XML的接口 BOM（浏览器对象模型）：提供了浏览器窗口之间进行...</p>
+            <p class="content">{{getSortDesc(item.content)}}</p>
           </div>
         </div>
       </div>
@@ -44,13 +44,14 @@
 <script>
 export default {
   name: 'ContentListItem',
-  data () {
-    return {
-      todos: [
-        { text: '学习 JavaScript' },
-        { text: '学习 Vue' },
-        { text: '整个牛项目' }
-      ]
+  props:['listInfo'],
+  methods:{
+    getSortDesc: function(content){
+      let len = content.length
+      if(len <= 50)
+        return content
+      else
+        return content.substring(0, 50) + '...'
     }
   }
 }

@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
 .CreateContentBox {
   width: 100%; height: auto;
-  padding: 5px;
+  padding: 5px 40px 5px;
   background: #fffff3;
   
   .top {
