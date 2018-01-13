@@ -1,6 +1,6 @@
 pipeline:
   build:
     image: node:latest
-    commands:
+    script:
       - npm install
       - npm run build
