@@ -64,7 +64,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><router-link to="/MainPage/Page0">主页</router-link></li>
-            <li><router-link to="/PersonalSpace">个人空间</router-link></li>
+            <li><router-link v-bind:to="{path='PersonalSpace', query='{userId=userInfo.user}'}">个人空间</router-link></li>
           </ul>
         </div>
       </div>
