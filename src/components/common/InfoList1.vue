@@ -3,9 +3,10 @@
     width:100%; height:100%;
     .header {
       width:100%;
-      border-bottom: 1px solid #efefef;
+      border-bottom: 1px solid #bbb;
       padding-left:10px;
-      color: brown;
+      color: #00645D;
+      background-color:#fff ;
     }
     .bottom {
       width: 100%;
@@ -15,7 +16,7 @@
       li {
         height: 25px;
         &>.title1 {width:80%; float: left;}
-        &>.date1 {width:20%; float: left;}
+        &>.date1 {width:20%; float: left; color: #aaa;}
         &>.title2 {width: 100%; float: left;}
       }
     }
@@ -25,7 +26,7 @@
 <template>
   <div class="InfoList1">
     <div class="header">
-      <h>{{title}}</h>
+      <p>{{title}}</p>
     </div>
     <div class="bottom">
       <ul>

@@ -23,7 +23,7 @@ function filterNull (o) {
   return o
 }
 // 接口处理函数
-function apiAxios (method, url, params, success, failure) {
+function apiAxios (method, url, params, success, failure, paramss) {
   if (params) {
     params = filterNull(params)
   }
@@ -31,7 +31,8 @@ function apiAxios (method, url, params, success, failure) {
     method: method,
     url: url,
     data: method === 'POST' || method === 'PUT' ? params : null,
-    params: method === 'GET' || method === 'DELETE' ? params : null,
+   // params: method === 'GET' || method === 'DELETE' ? params : null,
+    params: paramss,
     baseURL: root,
     withCredentials: false
   })
@@ -50,16 +51,16 @@ function apiAxios (method, url, params, success, failure) {
 }
 // 返回在vue模板中的调用接口
 export default {
-  get: function (url, params, success, failure) {
-    apiAxios('GET', url, params, success, failure)
+  get: function (url, params, success, failure, paramss) {
+    apiAxios('GET', url, params, success, failure, paramss)
   },
-  post: function (url, params, success, failure) {
-    apiAxios('POST', url, params, success, failure)
+  post: function (url, params, success, failure, paramss) {
+    apiAxios('POST', url, params, success, failure, paramss)
   },
-  put: function (url, params, success, failure) {
-    apiAxios('PUT', url, params, success, failure)
+  put: function (url, params, success, failure, paramss) {
+    apiAxios('PUT', url, params, success, failure, paramss)
   },
-  delete: function (url, params, success, failure) {
-    apiAxios('DELETE', url, params, success, failure)
+  delete: function (url, params, success, failure, paramss) {
+    apiAxios('DELETE', url, params, success, failure, paramss)
   }
 }
